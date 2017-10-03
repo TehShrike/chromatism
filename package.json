@@ -1,11 +1,11 @@
 {
-  "name": "chromatism",
+  "name": "chromatism2",
   "version": "3.0.0",
   "description": "A simple set of utility functions for colours.",
   "main": "dist/chromatism.umd.js",
   "module": "src/operations/index.js",
   "typings": "./index.d.ts",
-  "repository": "toish/chromatism",
+  "repository": "tehshrike/chromatism",
   "scripts": {
     "test": "BABEL_ENV=test mocha --compilers js:babel-core/register",
     "lint": "standard \"src/**/*.js\" \"test/**/*.js\"",
@@ -22,7 +22,6 @@
     "RGB",
     "HSL"
   ],
-  "author": "Toish <toish@toi.sh>",
   "license": "ISC",
   "dependencies": {},
   "devDependencies": {
@@ -37,10 +36,5 @@
     "rollup-plugin-uglify": "^2.0.1",
     "standard": "10.0.2",
     "uglify-es": "3.0.19"
-  },
-  "false": {},
-  "browserslist": [
-    "ie >= 9",
-    "last 2 versions"
-  ]
+  }
 }

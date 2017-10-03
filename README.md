@@ -1,3 +1,7 @@
+# Chromatism2
+
+A fork of [chromatism](https://github.com/toish/chromatism) with a quicker release cycle.
+
 # Chromatism :rainbow:
 
 A simple set of utility functions for colours.
@@ -53,28 +57,23 @@ First off, thanks so much for helping out! Colour modes + functions contributing
 ## Installation
 
 ```bash
-$ npm install --save chromatism
+$ npm install --save chromatism2
 ```
 
 #### CommonJS
 ```javascript
-var chromatism = require('chromatism');
+var chromatism = require('chromatism2');
 ```
 
 #### ES Modules
 ```javascript
-import * as chromatism from 'chromatism';
+import * as chromatism from 'chromatism2';
 ```
 
 **ES Module also exports all functions individually, allowing for tree-shaking and smaller bundles**
 
 ```javascript
-import { brightness } from 'chromatism';
-```
-
-#### Browser without bundling
-```html
-<script type="text/javascript" src="path-to-files/dist/chromatism.js"></script>
+import { brightness } from 'chromatism2';
 ```
 
 
