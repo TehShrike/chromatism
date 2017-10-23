@@ -71,13 +71,17 @@ export default {
   hsv: value => {
     const normalized = Object.assign({}, value, {
       s: value.s / 100,
-      l: value.l / 100
+      l: value.l / 100,
     })
-    var luminence = normalized.s * (normalized.l < 0.5 ? normalized.l : 1 - normalized.l)
+    const luminence = normalized.s * (normalized.l < 0.5 ? normalized.l : 1 - normalized.l)
 
-    var h = normalized.h
-    var s = (2 * luminence) / (normalized.l + luminence)
-    var v = normalized.l + luminence
+    const h = normalized.h
+    const v = normalized.l + luminence
+    let s = (2 * luminence) / (normalized.l + luminence)
+
+    if (isNaN(s)) {
+      s = 0
+    }
 
     return { h: h, s: s * 100, v: v * 100 }
   }

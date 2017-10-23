@@ -6,14 +6,15 @@ export default {
       v: value.v / 100
     })
 
-    let h = normalized.h
-    let s
-    if ((2 - normalized.s) * normalized.v < 1) {
-      s = normalized.s * normalized.v / ((2 - normalized.s) * normalized.v)
-    } else {
-      s = normalized.s * normalized.v / (2 - (2 - normalized.s) * normalized.v)
-    }
-    let l = ((2 - normalized.s) * normalized.v) / 2
+    const h = normalized.h
+    const sNumerator = normalized.s * normalized.v
+    const sDenominator = (2 - normalized.s) * normalized.v < 1
+      ? ((2 - normalized.s) * normalized.v)
+      : (2 - (2 - normalized.s) * normalized.v)
+
+    const s = (sDenominator === 0 || sDenominator === 0) ? 0 : sNumerator / sDenominator
+    const l = ((2 - normalized.s) * normalized.v) / 2
+
     return { h: h * 360, s: s * 100, l: l * 100 }
   }
 }

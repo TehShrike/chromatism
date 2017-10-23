@@ -273,4 +273,12 @@ describe('Operations', function () {
   it('should be close to 6500K when temperature is passed the D65 illuminant', () => {
     assert(close(chroma.temperature({ X: 95.047, Y: 100, Z: 108.883 }), 6503.4619534794965))
   })
+
+  it('Should properly handle HSV values with all zeroes', () => {
+    assert.deepEqual(chroma.convert('#000000').hsv, { h: 0, s: 0, v: 0 })
+
+    assert.deepEqual(chroma.convert({ h: 0, s: 0, v: 0 }).hex, '#000000')
+
+    assert.deepEqual(chroma.convert({ h: 0, s: 0, l: 0 }).hsv, { h: 0, s: 0, v: 0 })
+  })
 })
